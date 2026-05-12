@@ -29,7 +29,7 @@ const TabPanel = ({description, current}: Pick<TabItem, 'description' | 'current
                 case 'enter': return 'current';
             }
             return prev;
-        });
+        }); 
     }
     useEffect(() => {
         if (prevRef.current !== current) {
