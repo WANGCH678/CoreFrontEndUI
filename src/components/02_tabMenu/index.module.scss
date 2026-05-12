@@ -73,4 +73,46 @@
         }
 
     }
+
+    @keyframes enter {
+        0% {transform: translate(40px, 0); opacity: 0;}
+        100% {transform: translate(0, 0); opacity: 1;}
+    }
+
+    @keyframes exit {
+        0% {transform: translate(0, 0); opacity: 1;}
+        100% {transform: translate(-40px, 0); opacity: 0;}
+    }
+
+    .tabMenu3-2 {
+        .tab > button {
+            transition: ease-out 500ms;
+        }
+        .tabPannel {
+            position: relative;
+            overflow: hidden;
+        }
+        .description {
+            position: absolute;
+            transform: translate(0, 40px);
+            opacity: 0;
+            box-sizing: border-box;
+            padding: 15px;
+            left: 0;
+            top: 0;
+            right: 0;
+            &.enter {
+                position: relative;
+                animation: enter 300ms ease-out 200ms forwards;
+            }
+            &.exit {
+                animation: exit 300ms ease-in forwards;
+            }
+            &.current {
+                position: relative;
+                transform: translate(0, 0);
+                opacity: 1;
+            }
+        }
+    }
 }

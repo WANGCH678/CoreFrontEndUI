@@ -1,6 +1,7 @@
 import TabMenu1 from './1_r.tsx';
 import TabMenu2 from './2_r.tsx';
 import TabMenu3_1 from './3-1_r.tsx';
+import TabMenu3_2 from './3-2_r.tsx';
 import cx from './cx.ts';
 
 const TabMenus = () => (
@@ -9,6 +10,7 @@ const TabMenus = () => (
         <TabMenu1 />
         <TabMenu2 />
         <TabMenu3_1 />
+        <TabMenu3_2 />
     </div>
 )
 
