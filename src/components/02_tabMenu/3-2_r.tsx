@@ -28,7 +28,7 @@ const TabPanel = ({description, current}: Pick<TabItem, 'description' | 'current
                 case 'exit': return null;
                 case 'enter': return 'current';
             }
-            return prev;
+            return prev; 
         }); 
     }
     useEffect(() => {
