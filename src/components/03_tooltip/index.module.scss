@@ -1,0 +1,43 @@
+.tooltips {
+    .tooltip-root {
+        display: inline;
+        margin-right: 10px;
+        font-size: 1rem;
+        line-height: 1.3rem;
+    }
+    .tooltip-trigger {
+        position: relative;
+        display: inline-block;
+        margin-left: 4px;
+        &:after {
+            content: "i";
+            display: inline-block;
+            font-family: serif;
+            font-size: 0.7rem;
+            line-height: 1rem;
+            width: 16px;
+            height: 16px;
+            text-align: center;
+            vertical-align: middle;
+            color: #05f;
+            border: 1px solid #05f;
+            border-radius: 50%;
+        }
+        &.open:after {
+            color: #f50;
+            border-color: #f50;
+        }
+    }
+    .tooltip-layer {
+        position: absolute;
+        display: inline-block;
+        top: 1.4rem;
+        left: 30px;
+        width: 40vw;
+        max-width: calc(50vw - 9px);
+        padding: 10px;
+        border: 1px solid #ccc;
+        background-color: #FFF;
+        z-index: 2;
+    }
+}

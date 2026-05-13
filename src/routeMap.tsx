@@ -1,12 +1,13 @@
 import type { ComponentType } from 'react';
 import Accordions from './components/01_accordion';
 import TabMenus from './components/02_tabMenu';
+import Tooltip from './components/03_tooltip';
 
 const _routeMap = {
   root: {
     name: 'root',
     children: [
-      'accordion', 'tabMenu'
+      'accordion', 'tabMenu', 'tooltip'
     ],
   },
   accordion: {
@@ -15,7 +16,12 @@ const _routeMap = {
   },
   tabMenu: {
     name: '02. 탭 메뉴',
-    Component: TabMenus}
+    Component: TabMenus
+  },
+  tooltip: {
+    name: '03. 툴팁',
+    Component: Tooltip
+  },
 };
 
 export type RoutePath = keyof typeof _routeMap;
