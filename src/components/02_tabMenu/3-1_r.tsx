@@ -1,17 +1,15 @@
-import { useEffect, useRef, useState } from "react";
+import { useState } from "react";
 import cx from "./cx";
 import data from "./data";
 
 type TabItem = {
-    id: string;
     title: string;
-    description: string;
     current: boolean;
     toggle: () => void;
 }
 
-const TabItem = ({ id, title, description, current, toggle }: TabItem) => (
-    <li className={cx('tab', { current })} key={id}>
+const TabItem = ({ title, current, toggle }: TabItem) => (
+    <li className={cx('tab', { current })}>
         <button type="button" onClick={toggle}>{title}</button>
     </li>
 )

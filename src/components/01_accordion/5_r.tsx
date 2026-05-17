@@ -9,8 +9,9 @@ type AccordionItem = {
     current: boolean;
     toggle: () => void;
 }
-const AccordionItem = ({ id, title, description, current, toggle }: AccordionItem) => {
+const AccordionItem = ({ id: _id, title, description, current, toggle }: AccordionItem) => {
     const descRef = useRef<HTMLDivElement>(null);
+    const hidden = current ? undefined : ('until-found' as unknown as boolean);
     useEffect(() => {
         const desc = descRef.current;
         desc?.addEventListener('beforematch', toggle);
@@ -23,7 +24,7 @@ const AccordionItem = ({ id, title, description, current, toggle }: AccordionIte
                 {title}
             </button>
             <div className={cx('description')} ref={descRef} 
-                HIDDEN={ current ? undefined : 'until-found'}
+                hidden={hidden}
             >
                 {description}
             </div>

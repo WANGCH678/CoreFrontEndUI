@@ -1,22 +1,20 @@
-import { useEffect, useRef, useState, type AnimationEvent } from "react";
+import { useEffect, useRef, useState } from "react";
 import cx from "./cx";
 import data from "./data";
 
 type TabItem = {
-    id: string;
     title: string;
-    description: string;
     current: boolean;
     toggle: () => void;
 }
 
-const TabItem = ({ id, title, description, current, toggle }: TabItem) => (
-    <li className={cx('tab', { current })} key={id}>
+const TabItem = ({ title, current, toggle }: TabItem) => (
+    <li className={cx('tab', { current })}>
         <button type="button" onClick={toggle}>{title}</button>
     </li>
 )
 
-const TabPanel = ({description, current}: Pick<TabItem, 'description' | 'current'>) => {
+const TabPanel = ({description, current}: { description: string; current: boolean }) => {
     const [animationClassName, setAnimationClassName] = useState<string | null>(
         current ? 'current' : null
     );

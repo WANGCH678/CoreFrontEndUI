@@ -31,13 +31,19 @@
     .tooltip-layer {
         position: absolute;
         display: inline-block;
+        box-sizing: border-box;
         top: 1.4rem;
         left: 30px;
         width: 40vw;
-        max-width: calc(50vw - 9px);
+        max-width: calc(100vw - 20px);
         padding: 10px;
         border: 1px solid #ccc;
         background-color: #FFF;
         z-index: 2;
+        &.inside-viewport {
+            position: fixed;
+            top: 0;
+            left: 0;
+        }
     }
 }
