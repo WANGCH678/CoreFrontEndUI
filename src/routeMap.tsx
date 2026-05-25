@@ -2,12 +2,13 @@ import type { ComponentType } from 'react';
 import Accordions from './components/01_accordion';
 import TabMenus from './components/02_tabMenu';
 import Tooltip from './components/03_tooltip';
+import ReactiveTextBoxes from './components/04_reactiveTextBox';
 
 const _routeMap = {
   root: {
     name: 'root',
     children: [
-      'accordion', 'tabMenu', 'tooltip'
+      'accordion', 'tabMenu', 'tooltip', 'reactiveTextBox'
     ],
   },
   accordion: {
@@ -22,6 +23,10 @@ const _routeMap = {
     name: '03. 툴팁',
     Component: Tooltip
   },
+  reactiveTextBox: {
+    name: '04. 반응형 텍스트 박스',
+    Component: ReactiveTextBoxes
+  }
 };
 
 export type RoutePath = keyof typeof _routeMap;

@@ -73,7 +73,7 @@ const Gnb = () => {
     <aside>
       <h1>
         <Link to="/">
-          UI 요소 모음 <sub>정재남</sub>
+          UI 요소 모음
         </Link>
       </h1>
       <ul className="mainRoutes">
