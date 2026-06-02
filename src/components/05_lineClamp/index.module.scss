@@ -1,0 +1,40 @@
+.LineClamp {
+    .content {
+        position: relative;
+        margin: 10px 0;
+        padding: 10px;
+        border: 1px solid #ccc;
+        line-height: 1.67;
+    }
+    .text {
+        white-space: pre-line;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+    }
+    .buttonMore {
+        position: absolute;
+        right: 10px;
+        bottom: 5px;
+        border: 0;
+        background-color: transparent;
+        width: 20px;
+        height: 20px;
+        padding: 0;
+    }
+    .buttonMore::before {
+        content: "";
+        display: inline-block;
+        width: 5px;
+        height: 5px;
+        border-width: 1px;
+        border-style: solid;
+        border-color: transparent #333 #333 transparent;
+        transform: rotate(225deg);
+        vertical-align: middle;
+    }
+    .content.clamped .buttonMore::before {
+        transform: rotate(45deg);
+    }
+}

@@ -3,12 +3,13 @@ import Accordions from './components/01_accordion';
 import TabMenus from './components/02_tabMenu';
 import Tooltip from './components/03_tooltip';
 import ReactiveTextBoxes from './components/04_reactiveTextBox';
+import LineClamp from './components/05_lineClamp';
 
 const _routeMap = {
   root: {
     name: 'root',
     children: [
-      'accordion', 'tabMenu', 'tooltip', 'reactiveTextBox'
+      'accordion', 'tabMenu', 'tooltip', 'reactiveTextBox', 'lineClamp'
     ],
   },
   accordion: {
@@ -26,6 +27,10 @@ const _routeMap = {
   reactiveTextBox: {
     name: '04. 반응형 텍스트 박스',
     Component: ReactiveTextBoxes
+  },
+  lineClamp: {
+    name: '05. 여러줄 말줄임',
+    Component: LineClamp
   }
 };
 
