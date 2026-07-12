@@ -4,12 +4,13 @@ import TabMenus from './components/02_tabMenu';
 import Tooltip from './components/03_tooltip';
 import ReactiveTextBoxes from './components/04_reactiveTextBox';
 import LineClamp from './components/05_lineClamp';
+import forms from './components/06_form';
 
 const _routeMap = {
   root: {
     name: 'root',
     children: [
-      'accordion', 'tabMenu', 'tooltip', 'reactiveTextBox', 'lineClamp'
+      'accordion', 'tabMenu', 'tooltip', 'reactiveTextBox', 'lineClamp', 'forms'
     ],
   },
   accordion: {
@@ -31,6 +32,10 @@ const _routeMap = {
   lineClamp: {
     name: '05. 여러줄 말줄임',
     Component: LineClamp
+  },
+  form: {
+    name: '06. 폼',
+    Component: forms
   }
 };
 
