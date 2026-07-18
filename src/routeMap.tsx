@@ -4,13 +4,13 @@ import TabMenus from './components/02_tabMenu';
 import Tooltip from './components/03_tooltip';
 import ReactiveTextBoxes from './components/04_reactiveTextBox';
 import LineClamp from './components/05_lineClamp';
-import forms from './components/06_form';
+import Forms from './components/06_form';
 
 const _routeMap = {
   root: {
     name: 'root',
     children: [
-      'accordion', 'tabMenu', 'tooltip', 'reactiveTextBox', 'lineClamp', 'forms'
+      'accordion', 'tabMenu', 'tooltip', 'reactiveTextBox', 'lineClamp', 'form'
     ],
   },
   accordion: {
@@ -35,7 +35,7 @@ const _routeMap = {
   },
   form: {
     name: '06. 폼',
-    Component: forms
+    Component: Forms
   }
 };
 
@@ -48,7 +48,7 @@ export type Route = ChildRoute | ParentRoute;
 export const routeMap = _routeMap as Record<RoutePath, Route>;
 
 export const isParentRoute = (route: Route): route is ParentRoute =>
-  'children' in route;
+  route != null && 'children' in route;
 export const gnbRootList: [RoutePath, Route][] = (
   routeMap.root as ParentRoute
 ).children.map(r => [r, routeMap[r]]);
