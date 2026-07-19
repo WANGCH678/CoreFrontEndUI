@@ -1,0 +1,36 @@
+img.lazy {
+    background-color: #cab;
+}
+
+.lazy-image {
+    display: inline-block;
+    background-color: #cab;
+    background-size: 100% 100%;
+    margin: 0 0 10px;
+    position: relative;
+
+    img {
+        display: block;
+        opacity: 1;
+        transition: 0.7s;
+    }
+
+    &::after {
+        content: '';
+        display: inline-block;
+        position: absolute;
+        inset: 0;
+        backdrop-filter: none;
+        transition: 0.7s;
+    }
+
+    &.lazy {
+        img {
+            opacity: 0;
+        }
+
+        &::after {
+            backdrop-filter: blur(10px);
+        }
+    }
+}

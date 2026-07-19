@@ -81,6 +81,9 @@ aside {
     a {
       display: block;
       padding: 10px 20px 10px 25px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
     }
   }
   .subRoutes {
