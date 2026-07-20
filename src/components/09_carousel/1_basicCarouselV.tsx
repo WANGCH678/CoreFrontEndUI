@@ -6,8 +6,15 @@ import data from './data';
 
 type Direction = 'left' | 'right';
 
+const dataSize = data.length;
 const initiator = (wrapper: HTMLDivElement) => {
     const $ul = generateDOM('ul', cx('container'));
+    $ul.style.left = '0px';
+    let currentIndex = 0;
+    let isAnimating = false;
+    const handleTransitionEnd = () => { isAnimating = false; };
+    $ul.addEventListener('transitionend', handleTransitionEnd);
+
     data.forEach(({ imgUrl }, index) => {
         const $img = generateLazyImage(imgUrl, 400, 400);
         const $li = generateDOM('li', cx('item'));
@@ -15,8 +22,14 @@ const initiator = (wrapper: HTMLDivElement) => {
         $ul.append($li);
     });
     const move = (direction: Direction) => {
-        void direction;
-        // 여기에 이동 명령을 작성할 예정입니다.
+        if (isAnimating) return;
+        const nextIndex = direction === 'right'
+            ? Math.min(currentIndex + 1, dataSize - 1)
+            : Math.max(currentIndex - 1, 0);
+        if (nextIndex === currentIndex) return;
+        $ul.style.left = `${-1 * nextIndex * 400}px`;
+        currentIndex = nextIndex;
+        isAnimating = true;
     };
     const $left = generateDOM('button', cx('navButton', 'navLeft'));
     $left.addEventListener('click', () => move('left'));

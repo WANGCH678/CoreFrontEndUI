@@ -5,7 +5,7 @@ import data from './data';
 
 type Image = { src: string; width: number; height: number };
 
-const LazyImageIO = ({ src, width, height }: Image) => {
+export const LazyImage = ({ src, width, height }: Image) => {
     const figureRef = useRef<HTMLElement>(null);
     const imgRef = useRef<HTMLImageElement>(null);
     const [loaded, setLoaded] = useState(false);
@@ -34,7 +34,7 @@ const LazyLoad4 = () => (
         <h2>지연로딩 </h2>
         <h3>#4. React - IO + 작은 이미지 로딩 추가</h3>
         {data.map(url => (
-            <LazyImageIO src={url} key={url} width={600} height={320} />
+            <LazyImage src={url} key={url} width={600} height={320} />
         ))}
     </>
 );
