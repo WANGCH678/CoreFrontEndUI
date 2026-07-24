@@ -2,7 +2,7 @@ import { type ReactNode, createContext, useContext, useSyncExternalStore } from 
 import { deepCompare } from "@/service/util";
 
 type ScrollInfo = Pick<DOMRect, 'left' | 'top'> & { scrollHeight: number };
-type ViewPortSize = Pick<DOMRect, 'width' | 'height'>;
+export type ViewportSize = Pick<DOMRect, 'width' | 'height'>;
 
 const DefaultScrollInfo: ScrollInfo = { left: 0, top: 0, scrollHeight: 0 };
 const getScrollInfo = (() => {
@@ -48,9 +48,9 @@ const getViewportElem = (() => {
     };
 })();
 
-const DefaultViewportSize: ViewPortSize = { width: 0, height: 0 };
+const DefaultViewportSize: ViewportSize = { width: 0, height: 0 };
 const getViewportSize = (() => {
-    let stored: ViewPortSize = DefaultViewportSize;
+    let stored: ViewportSize = DefaultViewportSize;
     return () => {
         const { clientWidth, clientHeight } = getViewportElem();
         const newSize = { width: clientWidth, height: clientHeight };
@@ -71,7 +71,7 @@ const subscribeResize = (getSnapshot: () => void) => {
     };
 };
 
-const ViewportSizeContext = createContext<ViewPortSize>(DefaultViewportSize);
+const ViewportSizeContext = createContext<ViewportSize>(DefaultViewportSize);
 const ViewportSizeContextProvider = ({ children }: { children: ReactNode }) => {
     const viewportSize = useSyncExternalStore(
         subscribeResize, getViewportSize, () => DefaultViewportSize

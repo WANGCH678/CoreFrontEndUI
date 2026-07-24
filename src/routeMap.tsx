@@ -13,12 +13,24 @@ import TraditionalPagination from './components/08_pagination/1_traditional';
 import InfiniteScrollR from './components/08_pagination/2_infiniteScroll';
 import InfiniteScrollV from './components/08_pagination/3_infiniteScrollV';
 import Carousels from './components/09_carousel';
+import ScrollSpy1 from './components/10_scrollSpy/1_r';
+import ScrollSpy2 from './components/10_scrollSpy/2_r';
+import ScrollSpy3 from './components/10_scrollSpy/3_r';
+import Snackbar1V from './components/11_snackbar/1_v';
+import Snackbar2 from './components/11_snackbar/2_r';
+import Snackbar3_1 from './components/11_snackbar/3-1_r';
+import Snackbar3_2 from './components/11_snackbar/3-2_r';
+import Modal1 from './components/12_modal/1_r';
+import Modal2 from './components/12_modal/2_r';
+import Modal3V from './components/12_modal/3_v';
+import Modal4 from './components/12_modal/4_r';
+import Modal5 from './components/12_modal/5_r';
 
 const _routeMap = {
   root: {
     name: 'root',
     children: [
-      'accordion', 'tabMenu', 'tooltip', 'reactiveTextBox', 'lineClamp', 'form', 'lazyLoading', 'pagination', 'carousel'
+      'accordion', 'tabMenu', 'tooltip', 'reactiveTextBox', 'lineClamp', 'form', 'lazyLoading', 'pagination', 'carousel', 'scrollSpy', 'snackbar', 'modal'
     ],
   },
   accordion: {
@@ -86,7 +98,70 @@ const _routeMap = {
   carousel: {
     name: '09. 캐러셀',
     Component: Carousels
-  }
+  },
+  scrollSpy: {
+    link: 'scrollSpy/1_r',
+    name: '10. 스크롤 스파이',
+    children: ['scrollSpy/1_r', 'scrollSpy/2_r', 'scrollSpy/3_r']
+  },
+  'scrollSpy/1_r': {
+    name: '1R scroll event',
+    Component: ScrollSpy1
+  },
+  'scrollSpy/2_r': {
+    name: '2R IntersectionObserver',
+    Component: ScrollSpy2
+  },
+  'scrollSpy/3_r': {
+    name: '3R IO + ScrollBox',
+    Component: ScrollSpy3
+  },
+  snackbar: {
+    link: 'snackbar/1_v',
+    name: '11. 스낵바',
+    children: ['snackbar/1_v', 'snackbar/2_r', 'snackbar/3-1_r', 'snackbar/3-2_r']
+  },
+  'snackbar/1_v': {
+    name: '1V',
+    Component: Snackbar1V
+  },
+  'snackbar/2_r': {
+    name: '2R Context',
+    Component: Snackbar2
+  },
+  'snackbar/3-1_r': {
+    name: '3-1R Portal',
+    Component: Snackbar3_1
+  },
+  'snackbar/3-2_r': {
+    name: '3-2R Hook Portal',
+    Component: Snackbar3_2
+  },
+    modal: {
+        link: 'modal/1_r',
+        name: '12. 모달',
+        children: ['modal/1_r', 'modal/2_r', 'modal/3_v', 'modal/4_r', 'modal/5_r']
+  },
+  'modal/1_r': {
+    name: '1R context',
+    Component: Modal1
+  },
+  'modal/2_r': {
+    name: '2R createPortal',
+    Component: Modal2
+  },
+  'modal/3_v': {
+    name: '3V Vanilla',
+    Component: Modal3V
+  },
+    'modal/4_r': {
+        name: '4R HTML dialog',
+        Component: Modal4
+    },
+    'modal/5_r': {
+        name: '5R html dialog (2)',
+        Component: Modal5
+    }
 };
 
 export type RoutePath = keyof typeof _routeMap;

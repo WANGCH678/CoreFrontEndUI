@@ -1,0 +1,40 @@
+.ScrollBox {
+    position: relative;
+
+    .list {
+        display: flex;
+        flex-wrap: nowrap;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        overflow-y: hidden;
+        overflow-x: auto;
+    }
+
+    .item {
+        flex: 0;
+    }
+
+    .observer {
+        flex: 0 0 1px;
+        margin-right: -1px;
+    }
+
+    .nav-button {
+        position: absolute;
+        display: none;
+        cursor: pointer;
+
+        &.nav-prev {
+            left: 0;
+        }
+
+        &.nav-next {
+            right: 0;
+        }
+
+        &.on {
+            display: block;
+        }
+    }
+}
