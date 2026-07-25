@@ -25,12 +25,16 @@ import Modal2 from './components/12_modal/2_r';
 import Modal3V from './components/12_modal/3_v';
 import Modal4 from './components/12_modal/4_r';
 import Modal5 from './components/12_modal/5_r';
+import Popover1 from './components/13_popover/1_r';
+import Popover2 from './components/13_popover/2_r';
+import Popover3 from './components/13_popover/3_r';
+import Popover4 from './components/13_popover/4_r';
 
 const _routeMap = {
   root: {
     name: 'root',
     children: [
-      'accordion', 'tabMenu', 'tooltip', 'reactiveTextBox', 'lineClamp', 'form', 'lazyLoading', 'pagination', 'carousel', 'scrollSpy', 'snackbar', 'modal'
+      'accordion', 'tabMenu', 'tooltip', 'reactiveTextBox', 'lineClamp', 'form', 'lazyLoading', 'pagination', 'carousel', 'scrollSpy', 'snackbar', 'modal', 'popover'
     ],
   },
   accordion: {
@@ -161,6 +165,27 @@ const _routeMap = {
     'modal/5_r': {
         name: '5R html dialog (2)',
         Component: Modal5
+    },
+    popover: {
+        link: 'popover/1_r',
+        name: '13. 팝오버',
+        children: ['popover/1_r', 'popover/2_r', 'popover/3_r', 'popover/4_r']
+    },
+    'popover/1_r': {
+        name: '1R context',
+        Component: Popover1
+    },
+    'popover/2_r': {
+        name: '2R createPortal',
+        Component: Popover2
+    },
+    'popover/3_r': {
+        name: '3R HTML Dialog',
+        Component: Popover3
+    },
+    'popover/4_r': {
+        name: '4R HTML Popover',
+        Component: Popover4
     }
 };
 

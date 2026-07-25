@@ -1,0 +1,125 @@
+.Popovers {
+    .list {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    .list-item {
+        position: relative;
+        padding: 20px 40px 20px 20px;
+        margin: 10px 0;
+        border: 1px solid #eee;
+    }
+
+    .popover-parent {
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+
+    .popover-button {
+        padding: 10px;
+        border: 0;
+        border-radius: 10px;
+        background-color: transparent;
+        font-size: 1.3rem;
+        cursor: pointer;
+
+        &::before {
+            content: '\022ee';
+        }
+
+        &.opened {
+            background-color: rgba(255, 0, 0, 0.2);
+        }
+    }
+}
+
+.context-menu {
+    width: 160px;
+    margin: 0;
+    padding: 0;
+    background-color: #fff;
+    box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.2);
+    list-style: none;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    overflow: hidden;
+
+    li {
+        border-top: 1px solid #ccc;
+
+        &:first-of-type {
+            border-top: 0;
+        }
+    }
+
+    button {
+        display: block;
+        width: 100%;
+        padding: 10px 20px;
+        outline: 0;
+        border: 0;
+        background-color: #fff;
+        text-align: left;
+        transition: background-color ease-out 0.2s;
+        cursor: pointer;
+
+        &:hover {
+            background-color: #f0f0f0;
+        }
+    }
+}
+
+.MenuPopover {
+    &::before {
+        content: '';
+        position: fixed;
+        display: block;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 1;
+    }
+
+    .context-menu {
+        z-index: 2;
+        position: absolute;
+        top: 40px;
+        right: 5px;
+    }
+}
+
+.MenuDialog {
+    position: absolute;
+    background-color: #fff;
+    border: 0;
+    border-radius: 5px;
+    padding: 0;
+
+    &::backdrop {
+        background-color: transparent;
+    }
+
+    &:not([open]) {
+        display: none;
+    }
+}
+
+.MenuPopoverHtml {
+    position: absolute;
+    background-color: #fff;
+    border: 0;
+    border-radius: 5px;
+    padding: 0;
+
+    &::backdrop {
+        background-color: transparent;
+    }
+
+    &:not(:popover-open) {
+        display: none;
+    }
+}
