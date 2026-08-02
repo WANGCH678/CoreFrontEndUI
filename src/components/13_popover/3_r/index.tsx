@@ -16,14 +16,7 @@ const ListItem = ({
     const dialogRef = useRef<HTMLDialogElement>(null);
     const [menuOpened, toggleMenu] = useState(false);
 
-    const showMenu = () => {
-        if (dialogRef.current) {
-            toggleMenu(true);
-            const { scrollX, scrollY } = window;
-            dialogRef.current.showModal();
-            window.scrollTo(scrollX, scrollY);
-        }
-    };
+    const showMenu = () => toggleMenu(true);
     const handleClose = () => toggleMenu(false);
 
     return (

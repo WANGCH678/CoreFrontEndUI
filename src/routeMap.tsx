@@ -29,12 +29,13 @@ import Popover1 from './components/13_popover/1_r';
 import Popover2 from './components/13_popover/2_r';
 import Popover3 from './components/13_popover/3_r';
 import Popover4 from './components/13_popover/4_r';
+import Dropdown from './components/14_dropdown';
 
 const _routeMap = {
   root: {
     name: 'root',
     children: [
-      'accordion', 'tabMenu', 'tooltip', 'reactiveTextBox', 'lineClamp', 'form', 'lazyLoading', 'pagination', 'carousel', 'scrollSpy', 'snackbar', 'modal', 'popover'
+      'accordion', 'tabMenu', 'tooltip', 'reactiveTextBox', 'lineClamp', 'form', 'lazyLoading', 'pagination', 'carousel', 'scrollSpy', 'snackbar', 'modal', 'popover', 'dropdown'
     ],
   },
   accordion: {
@@ -186,6 +187,10 @@ const _routeMap = {
     'popover/4_r': {
         name: '4R HTML Popover',
         Component: Popover4
+    },
+    dropdown: {
+        name: '14. 드롭다운',
+        Component: Dropdown
     }
 };
 
