@@ -1,0 +1,128 @@
+.ScrollBox {
+    .item {
+        padding: 0 1px;
+        border: 0;
+        background-color: transparent;
+        cursor: pointer;
+    }
+
+    .nav-button {
+        top: 0;
+        bottom: 0;
+        width: 40px;
+        background-color: rgba(0, 0, 0, 0.4);
+        border: 0;
+        border-radius: 5px;
+
+        &::before,
+        &::after {
+            content: '';
+            position: absolute;
+            width: 4px;
+            height: 12px;
+            background-color: #fff;
+        }
+
+        &::before {
+            top: calc(50% - 10px);
+        }
+
+        &::after {
+            top: calc(50% + 2px);
+        }
+
+        &.nav-prev {
+            &::before {
+                left: 13px;
+                transform-origin: 0 100%;
+                rotate: 30deg;
+            }
+
+            &::after {
+                left: 13px;
+                transform-origin: 0 0;
+                rotate: -30deg;
+            }
+        }
+
+        &.nav-next {
+            &::before {
+                right: 13px;
+                top: calc(50% - 10px);
+                transform-origin: 100% 100%;
+                rotate: -30deg;
+            }
+
+            &::after {
+                right: 13px;
+                top: calc(50% + 2px);
+                transform-origin: 100% 0;
+                rotate: 30deg;
+            }
+        }
+
+        &.visible {
+            opacity: 0.4;
+            transition: opacity ease-out 0.2s;
+
+            &:hover {
+                opacity: 1;
+            }
+        }
+    }
+}
+
+.Reviews {
+    .review-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .review-item {
+        padding: 15px;
+        margin-top: 10px;
+        box-sizing: border-box;
+        min-height: 110px;
+        border-bottom: 1px solid #ccc;
+
+        &:first-of-type {
+            border-top: 1px solid #ccc;
+        }
+    }
+
+    .user {
+        display: block;
+        font-weight: 700;
+        margin-bottom: 10px;
+    }
+
+    .image-button {
+        float: right;
+        position: relative;
+        width: 80px;
+        height: 80px;
+        margin: 0;
+        padding: 0;
+        border: 0;
+        background-color: transparent;
+        cursor: pointer;
+
+        img {
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+    }
+
+    .image-more {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        padding: 3px 5px 2px;
+        background-color: royalblue;
+        color: white;
+        border-radius: 4px;
+    }
+}

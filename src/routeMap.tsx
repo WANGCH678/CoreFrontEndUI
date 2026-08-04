@@ -30,12 +30,14 @@ import Popover2 from './components/13_popover/2_r';
 import Popover3 from './components/13_popover/3_r';
 import Popover4 from './components/13_popover/4_r';
 import Dropdown from './components/14_dropdown';
+import Autocompletes from './components/15_autocomplete';
+import Gallery1 from './components/16_gallery/1_r';
 
 const _routeMap = {
   root: {
     name: 'root',
     children: [
-      'accordion', 'tabMenu', 'tooltip', 'reactiveTextBox', 'lineClamp', 'form', 'lazyLoading', 'pagination', 'carousel', 'scrollSpy', 'snackbar', 'modal', 'popover', 'dropdown'
+      'accordion', 'tabMenu', 'tooltip', 'reactiveTextBox', 'lineClamp', 'form', 'lazyLoading', 'pagination', 'carousel', 'scrollSpy', 'snackbar', 'modal', 'popover', 'dropdown', 'autoComplete', 'gallery'
     ],
   },
   accordion: {
@@ -191,6 +193,19 @@ const _routeMap = {
     dropdown: {
         name: '14. 드롭다운',
         Component: Dropdown
+    },
+    autoComplete: {
+        name: '15. 자동 완성',
+        Component: Autocompletes
+    },
+    gallery: {
+        link: 'gallery/1_r',
+        name: '16. 갤러리',
+        children: ['gallery/1_r']
+    },
+    'gallery/1_r': {
+        name: '1R Carousel',
+        Component: Gallery1
     }
 };
 
