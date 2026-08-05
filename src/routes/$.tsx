@@ -15,6 +15,7 @@ function ItemPage() {
 
   return (
     <ViewportContextProvider>
+      <div className="route-path">/{_splat}</div>
       <Component />
     </ViewportContextProvider>
   );
