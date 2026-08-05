@@ -32,12 +32,14 @@ import Popover4 from './components/13_popover/4_r';
 import Dropdown from './components/14_dropdown';
 import Autocompletes from './components/15_autocomplete';
 import Gallery1 from './components/16_gallery/1_r';
+import Gallery2 from './components/16_gallery/2_r';
+import { Btx, Jyb, Nuzinse } from './components/17_route';
 
 const _routeMap = {
   root: {
     name: 'root',
     children: [
-      'accordion', 'tabMenu', 'tooltip', 'reactiveTextBox', 'lineClamp', 'form', 'lazyLoading', 'pagination', 'carousel', 'scrollSpy', 'snackbar', 'modal', 'popover', 'dropdown', 'autoComplete', 'gallery'
+      'accordion', 'tabMenu', 'tooltip', 'reactiveTextBox', 'lineClamp', 'form', 'lazyLoading', 'pagination', 'carousel', 'scrollSpy', 'snackbar', 'modal', 'popover', 'dropdown', 'autoComplete', 'gallery', 'hype'
     ],
   },
   accordion: {
@@ -201,11 +203,32 @@ const _routeMap = {
     gallery: {
         link: 'gallery/1_r',
         name: '16. 갤러리',
-        children: ['gallery/1_r']
+        children: ['gallery/1_r', 'gallery/2_r']
     },
     'gallery/1_r': {
         name: '1R Carousel',
         Component: Gallery1
+    },
+    'gallery/2_r': {
+        name: '2R LightBox',
+        Component: Gallery2
+    },
+    hype: {
+        link: 'hype/jyb',
+        name: '17. 경로 추가',
+        children: ['hype/jyb', 'hype/btx', 'hype/nuzinse']
+    },
+    'hype/jyb': {
+        name: 'Jyb',
+        Component: Jyb
+    },
+    'hype/btx': {
+        name: 'Btx',
+        Component: Btx
+    },
+    'hype/nuzinse': {
+        name: 'Nuzinse',
+        Component: Nuzinse
     }
 };
 

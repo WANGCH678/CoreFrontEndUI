@@ -1,11 +1,11 @@
-import { useCallback, useEffect, useRef, useState } from 'react';
+import { useCallback, useEffect, useRef, useState, type CSSProperties } from 'react';
 import useIntersectionObserver from '@/hooks/useIntersectionObserver';
 import cx from './cx';
 import data from './data';
 
-type Image = { src: string; width: number; height: number };
+type Image = { src: string; width: number; height: number; style?: CSSProperties };
 
-export const LazyImage = ({ src, width, height }: Image) => {
+export const LazyImage = ({ src, width, height, style }: Image) => {
     const figureRef = useRef<HTMLElement>(null);
     const imgRef = useRef<HTMLImageElement>(null);
     const [loaded, setLoaded] = useState(false);
@@ -24,7 +24,14 @@ export const LazyImage = ({ src, width, height }: Image) => {
 
     return (
         <figure ref={figureRef} className={cx('lazy-image', { lazy: !loaded })}>
-            <img onLoad={handleLoad} ref={imgRef} width={width} height={height} alt="" />
+            <img
+                onLoad={handleLoad}
+                ref={imgRef}
+                width={width}
+                height={height}
+                style={style}
+                alt=""
+            />
         </figure>
     );
 };

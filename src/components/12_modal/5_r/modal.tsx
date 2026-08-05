@@ -34,26 +34,34 @@ const ModalHeader = ({
     title,
     children,
     showCloseButton = true,
+    className,
+    closeButtonClassName,
 }: {
     title?: string;
     children?: ReactNode;
     showCloseButton?: boolean;
+    className?: string;
+    closeButtonClassName?: string;
 }) => {
     const { hide } = useModalContext();
 
     return (
-        <div className={cx('ModalHeader')}>
+        <div className={cx('ModalHeader', className)}>
             <div className={cx('title')}>{title}</div>
             {children}
             {showCloseButton && (
-                <button type="button" className={cx('close')} onClick={hide} />
+                <button
+                    type="button"
+                    className={cx('close', closeButtonClassName)}
+                    onClick={hide}
+                />
             )}
         </div>
     );
 };
 
-const ModalContent = ({ children }: { children: ReactNode }) => (
-    <div className={cx('ModalContent')}>{children}</div>
+const ModalContent = ({ children, className }: ModalProps) => (
+    <div className={cx('ModalContent', className)}>{children}</div>
 );
 
 type ButtonProps = {
@@ -66,14 +74,16 @@ type ButtonProps = {
 const ModalFooter = ({
     buttons,
     children,
+    className,
 }: {
     buttons: ButtonProps[];
     children?: ReactNode;
+    className?: string;
 }) => {
     const { hide } = useModalContext();
 
     return (
-        <div className={cx('ModalFooter')}>
+        <div className={cx('ModalFooter', className)}>
             {children}
             {buttons.map(({ type, text, formId, onClick }) => {
                 if (type === 'submit') return (

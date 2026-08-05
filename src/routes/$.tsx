@@ -19,3 +19,5 @@ function ItemPage() {
     </ViewportContextProvider>
   );
 }
+
+export default ItemPage;
