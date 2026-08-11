@@ -1,1 +1,0 @@
-import{R as r,i as s,r as a,j as o,V as p}from"./index-DRJoACkm.js";function i(){const{_splat:e}=r.useParams(),t=a[e];if(!t||s(t)||!t.Component)return null;const n=t.Component;return o.jsx(p,{children:o.jsx(n,{})})}export{i as component};
